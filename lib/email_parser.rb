@@ -10,9 +10,12 @@ class EmailAddressParser
   end
   
   def parse
-   x = @email_addresses.split(/,\s|\s/)
-   x = x.delete_if{|x| x.include?(x)}
-   x
+    return_array = []
+    x = @email_addresses.split(/,\s|\s/)
+    x.each do |x|
+      return_array.push(x) if return_array.include?(x) == false
+    end
+    return_array
   end
   
 end
