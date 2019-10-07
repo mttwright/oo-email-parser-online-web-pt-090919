@@ -10,8 +10,9 @@ class EmailAddressParser
   end
   
   def parse
-    @email_addresses.split(/,\s|\s/)
-    @email_addresses.delete
+   x = @email_addresses.split(/,\s|\s/)
+   x = x.delete_if{|x| x.include?(x)}
+   x
   end
   
 end
